@@ -12,7 +12,10 @@ const config = assign(baseConfig, {
   plugins: baseConfig.plugins.concat([
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
-  ])
+  ]),
+  output: {
+    publicPath: '/'
+  }
 })
 
 const compiler = webpack(config);

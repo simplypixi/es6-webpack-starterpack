@@ -42,5 +42,26 @@ module.exports = {
       templateContent: templateContent(), // eslint-disable-line no-use-before-define
     }),
     new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en/)
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        enforce: 'pre',
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+        options: {
+          failOnError: true,
+          cache: true
+          // eslint options (if necessary)
+          //quiet: true   :: for PROD
+        }
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
+      }
+    ]
+  }
 }
