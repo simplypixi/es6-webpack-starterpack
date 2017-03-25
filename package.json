@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node ./webpack/dev.server",
+    "build": "node ./node_modules/webpack/bin/webpack -p --config webpack.config.js"
   },
   "repository": "git+https://github.com/simplypixi/es6-webpack-starterpack.git",
   "keywords": [
     "es6",
     "EcmaScript6",
-    "webpack",
-    "2",
+    "webpack2",
     "starter",
     "pack"
   ],
@@ -22,6 +22,14 @@
   },
   "homepage": "https://github.com/simplypixi/es6-webpack-starterpack#readme",
   "dependencies": {
-    "webpack": "^2.3.2"
+    "cheerio": "^0.22.0",
+    "express": "^4.15.2",
+    "html-webpack-plugin": "^2.28.0",
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "devDependencies": {
+    "webpack-dev-middleware": "^1.10.1",
+    "webpack-hot-middleware": "^2.17.1"
   }
 }
